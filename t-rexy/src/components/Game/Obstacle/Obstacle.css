@@ -1,0 +1,26 @@
+#obstacle {
+	position:absolute;
+	top: 200px;
+	/* left: 0px; */
+	/* transform: scale(0.05); */
+}
+
+.move {
+	animation: moveBomb 4s linear infinite;
+} 
+
+@keyframes moveBomb { 
+  0% {
+    left: 400px;
+  }
+	50% {
+   left: 200px;
+  }
+	75% {
+		left : 100px;
+
+	}
+  100% {
+    left: -50px;
+  }
+}  

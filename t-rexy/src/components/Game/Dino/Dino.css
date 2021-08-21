@@ -1,0 +1,23 @@
+#dino {
+	top:180px;
+	position:absolute;
+	left: 100px;
+}
+.jump {
+	animation: jump 1s ease;
+}
+
+@keyframes jump {
+  0% {
+    top: 180px;
+  }
+  50% {
+    top: 110px;
+  }
+  75% {
+    top: 110px;
+  }
+  100% {
+    top: 180px;
+  }
+}
