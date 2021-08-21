@@ -40,8 +40,10 @@ function Main() {
 
   useEffect(() => {
     const obstacle = document.querySelector("#obstacle");
+    const obstacle2 = document.querySelector("#obstacle2");
     if (isStart && !isGameOver) {
       obstacle?.classList.add("move");
+      obstacle2?.classList.add("move-2");
       interval.current = setInterval(() => {
         if (Math.floor(time) % 2 == 1) {
           setShowObstacle(true);
@@ -63,19 +65,27 @@ function Main() {
   const checkGameOver = () => {
     const dino = document.querySelector("#dino");
     const obstacle = document.querySelector("#obstacle");
+    const obstacle2 = document.querySelector("#obstacle2");
 
-    if (dino && obstacle) {
+    if (dino && obstacle && obstacle2) {
       const dinoTop = parseInt(getComputedStyle(dino).getPropertyValue("top"));
       const obstacleLeft = parseInt(
         getComputedStyle(obstacle).getPropertyValue("left")
       );
-      console.log(dinoTop, obstacleLeft);
 
-      if (dinoTop >= 90 && obstacleLeft < 125 && obstacleLeft > 60) {
+      const obstacle2Left = parseInt(
+        getComputedStyle(obstacle2).getPropertyValue("left")
+      );
+     // console.log(dinoTop, obstacleLeft);
+      console.log(dinoTop, obstacle2Left);
+
+      if (dinoTop >= 90 && obstacleLeft < 125 && obstacleLeft > 65 || 
+        dinoTop >= 90 && obstacle2Left < 120 && obstacle2Left > 65 ) {
         alert("Game over");
         setIsStart(false);
         setIsGameOver(true);
         obstacle?.classList.remove("move");
+        obstacle2?.classList.remove("move-2");
         setTime(0);
       }
     }
@@ -88,7 +98,7 @@ function Main() {
 			<div className="description">Press <span className="bold">space bar</span> to start. Use the <span className="bold">up arrow key</span>  to jump.</div>
       </div>
       <div className="score-wrapper">
-      <div className="current-score">HI </div>
+      {/* <div className="current-score">HI </div> */}
       <div className="current-score">{ parseInt(((Math.round(time * 1e2) / 1e2) * 10).toString())} </div>
       </div>
       <div className="game">

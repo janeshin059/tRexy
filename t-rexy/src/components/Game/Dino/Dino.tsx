@@ -15,10 +15,9 @@ function Dino() {
   const handleJump = (e: any) => {
 		const dino = document.querySelector("#dino");
     if (!dino) {
-      console.log("f");
       return;
     }
-    if (e.keyCode === 38 && !isJumpMode) {
+    if ((e.keyCode === 38 && !isJumpMode) || (e.keyCode === 32 && !isJumpMode)) {
       setisJumpMode(true);
       console.log("jump");
       dino.classList.add("jump");
