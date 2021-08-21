@@ -2,13 +2,8 @@ import { useEffect, useLayoutEffect, useState } from "react";
 import DinoImg from "../../../assets/dinosaur.png";
 import "./Dino.css";
 
-const SPEED = 10;
-const UPDATE = 150;
-const JUMP_HEIGHT = 150;
-
 function Dino() {
   const [isJumpMode, setisJumpMode] = useState(false);
- // const [top, setTop] = useState(170);
   
   useEffect(() => {
     document.addEventListener("keydown", handleJump);
@@ -23,7 +18,7 @@ function Dino() {
       console.log("f");
       return;
     }
-    if (e.keyCode === 32 && !isJumpMode) {
+    if (e.keyCode === 38 && !isJumpMode) {
       setisJumpMode(true);
       console.log("jump");
       dino.classList.add("jump");

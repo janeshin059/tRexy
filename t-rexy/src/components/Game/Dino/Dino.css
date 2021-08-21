@@ -1,5 +1,5 @@
 #dino {
-	top:180px;
+	top:90px;
 	position:absolute;
 	left: 100px;
 }
@@ -9,15 +9,15 @@
 
 @keyframes jump {
   0% {
-    top: 180px;
+    top: 90px;
   }
   50% {
-    top: 110px;
+    top: 20px;
   }
   75% {
-    top: 110px;
+    top: 20px;
   }
   100% {
-    top: 180px;
+    top: 90px;
   }
 }

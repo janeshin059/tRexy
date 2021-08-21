@@ -1,0 +1,25 @@
+.wrapper {
+	display:flex;
+	align-items:center;
+	flex-direction: column;
+
+}
+.description {
+	height: 230px;
+	
+}
+.game {
+	width:600px;
+	position:relative;
+}
+
+.high-score {
+	font-size: 14px;
+	color: #5D5D5D;
+}
+
+.current-score {
+	font-size: 14px;
+	color: #5D5D5D;
+	margin-left: 10px;
+}

@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import HorizonImg from "../../../assets/horizon.jpg";
+import HorizonImg from "../../../assets/background.jpg";
 
 const UPDATE = 150;
 const SPEED = 10;
@@ -30,9 +30,11 @@ function Background() {
     const ctx = canvas.getContext("2d");
     const img = new Image();
 
-  	img.src = HorizonImg;
-    img.onload = function () {
+    img.src = HorizonImg;
 
+		if(!ctx) return;
+	
+    img.onload = function () {
       ctx?.drawImage(
         img,
         offset,
@@ -41,17 +43,26 @@ function Background() {
         img.height,
         0,
         0,
-        img.width- offset,
+        img.width - offset,
         img.height
       );
-      ctx?.drawImage(img, 0, 0, offset, img.height, img.width - offset, 0, offset, img.height); //이어서 그리기
+      ctx?.drawImage(
+        img,
+        0,
+        0,
+        offset,
+        img.height,
+        img.width - offset,
+        0,
+        offset,
+        img.height
+      ); //이어서 그리기
     };
-
   };
 
   const moveBackGround = () => {
-		const img = new Image();
-		img.src = HorizonImg;
+    const img = new Image();
+    img.src = HorizonImg;
 
     interval.current = setInterval(() => {
       if (offset === img.width - SPEED) {
@@ -63,8 +74,8 @@ function Background() {
   };
 
   return (
-    <div style={{ position: "absolute", top: '200px' }}>
-      <canvas width="600px" height="400px" id="background"></canvas>
+    <div>
+      <canvas width="600px" height="150px" id="background"></canvas>
     </div>
   );
 }

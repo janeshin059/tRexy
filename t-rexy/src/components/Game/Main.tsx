@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import Background from "./Background/Background";
 import Dino from "./Dino/Dino";
 import Obstacle from "./Obstacle/Obstacle";
+import "./Main.css";
 
 function Main() {
   const [isStart, setIsStart] = useState(false);
@@ -25,12 +26,12 @@ function Main() {
   }, [isStart]);
 
   useEffect(() => {
-		const obstacle = document.querySelector("#obstacle");
+    const obstacle = document.querySelector("#obstacle");
     // if(!interval.current) {
     // 	return;
     // }
     if (isStart) {
-			obstacle?.classList.add("move");
+      obstacle?.classList.add("move");
       interval.current = setInterval(() => {
         if (Math.floor(time) % 2 == 1) {
           setShowObstacle(true);
@@ -52,15 +53,13 @@ function Main() {
     const obstacle = document.querySelector("#obstacle");
 
     if (dino && obstacle) {
-      const dinoTop = parseInt(
-        getComputedStyle(dino).getPropertyValue("top")
-      );
+      const dinoTop = parseInt(getComputedStyle(dino).getPropertyValue("top"));
       const obstacleLeft = parseInt(
         getComputedStyle(obstacle).getPropertyValue("left")
       );
-			  console.log(dinoTop, obstacleLeft)
+      console.log(dinoTop, obstacleLeft);
 
-      if (dinoTop >= 180 &&obstacleLeft < 125 && obstacleLeft> 60) {
+      if (dinoTop >= 90 && obstacleLeft < 125 && obstacleLeft > 60) {
         alert("game over");
         setIsStart(false);
         setTime(0);
@@ -69,13 +68,17 @@ function Main() {
   };
 
   return (
-    <div>
-			
-      {!isStart && <>welcome.press click to start</>}
-      <Background></Background>
-			<Dino></Dino>
-		
-			<Obstacle showObstacle={showObstacle}></Obstacle>
+    <div className="wrapper">
+      <div className="description">
+        {!isStart && <>welcome.press click to start</>}
+      </div>
+      <div className="game">
+        <Background></Background>
+        <Dino></Dino>
+
+        <Obstacle showObstacle={showObstacle}></Obstacle>
+      </div>
+      <div className="current-score">HI </div>
     </div>
   );
 }
