@@ -4,7 +4,7 @@ import HorizonImg from "../../../assets/background.jpg";
 const UPDATE = 150;
 const SPEED = 10;
 
-function Background() {
+function Background(props: {isStart:boolean}) {
   const interval: { current: NodeJS.Timeout | null } = useRef(null);
   const [offset, setOffset] = useState(0);
 
@@ -15,12 +15,15 @@ function Background() {
   }, []);
 
   useEffect(() => {
+    
     draw();
+    if(props.isStart){
     moveBackGround();
+    }
     return () => {
       clearInterval(interval.current as NodeJS.Timeout);
     };
-  }, [offset]);
+  }, [offset, props.isStart]);
 
   const draw = () => {
     const canvas = document.querySelector(

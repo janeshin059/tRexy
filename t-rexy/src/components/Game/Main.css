@@ -2,24 +2,56 @@
 	display:flex;
 	align-items:center;
 	flex-direction: column;
+}
 
+.title {
+	font-weight: 600;
+	font-size: 36px;
+	color: #5D5D5D;
 }
 .description {
-	height: 230px;
-	
+	font-size: 14px;
+	color: #5D5D5D;
+	width: 200px;
+	margin-left: 300px;
+	margin-top: 43px;
 }
+.bold {
+	font-size: 14px;
+	font-weight: 600;
+	color: #5D5D5D;
+}
+.description-wrapper {
+	flex-direction: row;
+	display:flex;
+}
+
 .game {
 	width:600px;
 	position:relative;
 }
 
+.score-wrapper{
+	width:600px;
+	display:flex;
+}
+
 .high-score {
 	font-size: 14px;
 	color: #5D5D5D;
+	align-self: flex-end;
 }
 
 .current-score {
+	font-weight: 600;
 	font-size: 14px;
 	color: #5D5D5D;
 	margin-left: 10px;
+	align-self: flex-end;
+}
+
+.restart {
+	position: absolute;
+	top:70px;
+	z-index: 100;
 }
