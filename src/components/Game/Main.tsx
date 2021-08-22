@@ -4,6 +4,7 @@ import Dino from "./Dino/Dino";
 import Obstacle from "./Obstacle/Obstacle";
 import "./Main.css";
 import Restart from '../../assets/restart.png';
+import { useHistory } from "react-router-dom";
 
 
 
@@ -13,6 +14,7 @@ function Main() {
   const [time, setTime] = useState(0);
   const [showObstacle, setShowObstacle] = useState(false);
   const interval = useRef<any>();
+  const history = useHistory();
 
   const handleStart = (e: any) => {
     if (e.keyCode === 32) {
@@ -77,7 +79,7 @@ function Main() {
         getComputedStyle(obstacle2).getPropertyValue("left")
       );
      // console.log(dinoTop, obstacleLeft);
-      console.log(dinoTop, obstacle2Left);
+      // console.log(dinoTop, obstacle2Left);
 
       if (dinoTop >= 90 && obstacleLeft < 125 && obstacleLeft > 65 || 
         dinoTop >= 90 && obstacle2Left < 120 && obstacle2Left > 65 ) {
@@ -91,6 +93,9 @@ function Main() {
     }
   };
 
+  const handleDrawingClick = ()=> {
+    history.push('/drawing')
+  }
   return (
     <div className="wrapper">
       <div className="description-wrapper">
@@ -108,6 +113,7 @@ function Main() {
 
         <Obstacle showObstacle={showObstacle}></Obstacle>
       </div>
+      <button onClick={handleDrawingClick}>Draw my own</button>
      
     </div>
   );

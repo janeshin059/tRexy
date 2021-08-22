@@ -1,0 +1,8 @@
+.pixel {
+  width: 15px;
+  height: 15px;
+}
+
+.pixel:hover {
+  cursor: pointer;
+}
