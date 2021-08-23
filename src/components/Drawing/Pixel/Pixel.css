@@ -6,3 +6,8 @@
 .pixel:hover {
   cursor: pointer;
 }
+
+.pixel-preview {
+  width: 5px;
+  height: 5px;
+}

@@ -30,11 +30,14 @@ function Dino() {
     }, 1000);
   };
 
+  const item = localStorage.getItem('recent-image') ? localStorage.getItem('recent-image')?.toString(): DinoImg
   return (
-    <img
-      id="dino"
-      src={DinoImg}
-    />
+
+    <img id="dino" src={item}></img>
+    // <img
+    //   id="dino"
+    //   src={DinoImg}
+    // />
   );
 }
 

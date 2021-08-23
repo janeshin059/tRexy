@@ -5,7 +5,7 @@ function Row(props: {width:number, selectedColor: string}) {
 
 	let pixels = [];
 	for(let i = 0; i<props.width; i++){
-		pixels.push(<Pixel key={i} selectedColor={props.selectedColor}></Pixel>)
+		pixels.push(<Pixel key={i} selectedColor={props.selectedColor} ></Pixel>)
 	}
 
 	return(

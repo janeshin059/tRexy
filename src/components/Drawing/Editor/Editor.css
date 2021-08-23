@@ -7,14 +7,6 @@
   align-items: center;
 }
 
-h1 {
-  margin-bottom: 1.5rem;
-}
-
-h2 {
-  margin-bottom: 1rem;
-}
-
 #options {
   display: flex;
   margin-bottom: 3rem;
@@ -48,8 +40,13 @@ h2 {
 .clear-btn {
   border-radius: 0.25rem;
   border: 1px solid #5d5d5d;
+  background-color: white;
+  color: #5d5d5d;
   cursor: pointer;
-  width: 100px;
+  width: 80px;
+  height: 45px;
+  border-radius: 10px;
+  margin-right: 10px;
 }
 
 .continue-btn {
@@ -58,9 +55,16 @@ h2 {
   background-color: #5d5d5d;
   color: white;
   cursor: pointer;
-  width: 100px;
+  width: 80px;
+  height: 45px;
+  border-radius: 10px;
 }
 
 .circle-picker {
   margin-bottom: 1.5rem !important;
+}
+
+.buttons-wrapper {
+  display: flex;
+  flex-direction: row;
 }

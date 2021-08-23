@@ -3,10 +3,8 @@ import Background from "./Background/Background";
 import Dino from "./Dino/Dino";
 import Obstacle from "./Obstacle/Obstacle";
 import "./Main.css";
-import Restart from '../../assets/restart.png';
+import Restart from "../../assets/restart.png";
 import { useHistory } from "react-router-dom";
-
-
 
 function Main() {
   const [isStart, setIsStart] = useState(false);
@@ -19,19 +17,19 @@ function Main() {
   const handleStart = (e: any) => {
     if (e.keyCode === 32) {
       setIsStart(true);
-      if(isGameOver){
+      if (isGameOver) {
         setIsGameOver(false);
-        }
+      }
     }
   };
 
-  const handleReStart = (e:any) => {
+  const handleReStart = (e: any) => {
     e.preventDefault();
-    if(isGameOver){
+    if (isGameOver) {
       setIsGameOver(false);
       setIsStart(true);
     }
-  }
+  };
   /*Start game when press Space bar */
   useEffect(() => {
     document.addEventListener("keydown", handleStart);
@@ -60,7 +58,6 @@ function Main() {
 
     return () => {
       clearInterval(interval.current);
-      
     };
   }, [time, isStart, isGameOver]);
 
@@ -78,11 +75,13 @@ function Main() {
       const obstacle2Left = parseInt(
         getComputedStyle(obstacle2).getPropertyValue("left")
       );
-     // console.log(dinoTop, obstacleLeft);
+      // console.log(dinoTop, obstacleLeft);
       // console.log(dinoTop, obstacle2Left);
 
-      if (dinoTop >= 90 && obstacleLeft < 125 && obstacleLeft > 65 || 
-        dinoTop >= 90 && obstacle2Left < 120 && obstacle2Left > 65 ) {
+      if (
+        (dinoTop >= 90 && obstacleLeft < 125 && obstacleLeft > 65) ||
+        (dinoTop >= 90 && obstacle2Left < 120 && obstacle2Left > 65)
+      ) {
         alert("Game over");
         setIsStart(false);
         setIsGameOver(true);
@@ -93,28 +92,34 @@ function Main() {
     }
   };
 
-  const handleDrawingClick = ()=> {
-    history.push('/drawing')
-  }
+  const handleDrawingClick = () => {
+    history.push("/drawing");
+  };
   return (
     <div className="wrapper">
       <div className="description-wrapper">
-			<p className="title">T-Rex</p>
-			<div className="description">Press <span className="bold">space bar</span> to start. Use the <span className="bold">up arrow key</span>  to jump.</div>
+        <p className="title">T-Rex</p>
+        <div className="description">
+          Press <span className="bold">space bar</span> to start. Use the
+          <span className="bold"> up arrow key</span> to jump.
+        </div>
       </div>
       <div className="score-wrapper">
-      {/* <div className="current-score">HI </div> */}
-      <div className="current-score">{ parseInt(((Math.round(time * 1e2) / 1e2) * 10).toString())} </div>
+        <div className="current-score">
+          {parseInt(((Math.round(time * 1e2) / 1e2) * 10).toString())}
+        </div>
       </div>
       <div className="game">
-       {isGameOver && <img className="restart" src={Restart} onClick={handleReStart}></img>}
+        {isGameOver && (
+          <img className="restart" src={Restart} onClick={handleReStart}></img>
+        )}
         <Background isStart={isStart}></Background>
         <Dino></Dino>
 
         <Obstacle showObstacle={showObstacle}></Obstacle>
       </div>
-      <button onClick={handleDrawingClick}>Draw my own</button>
-     
+     {!isStart && (<button onClick={handleDrawingClick} className="draw-btn">DRAW YOUR OWN</button>
+    )} 
     </div>
   );
 }

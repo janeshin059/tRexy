@@ -1,57 +1,70 @@
 .wrapper {
-	display:flex;
-	align-items:center;
-	flex-direction: column;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
 .title {
-	font-weight: 600;
-	font-size: 36px;
-	color: #5D5D5D;
+  font-weight: 600;
+  font-size: 36px;
+  color: #5d5d5d;
 }
 .description {
-	font-size: 14px;
-	color: #5D5D5D;
-	width: 200px;
-	margin-left: 300px;
-	margin-top: 43px;
+  font-size: 14px;
+  color: #5d5d5d;
+  width: 200px;
+  margin-left: 300px;
+  margin-top: 43px;
 }
 .bold {
-	font-size: 14px;
-	font-weight: 600;
-	color: #5D5D5D;
+  font-size: 14px;
+  font-weight: 600;
+  color: #5d5d5d;
 }
 .description-wrapper {
-	flex-direction: row;
-	display:flex;
+  flex-direction: row;
+  display: flex;
 }
 
 .game {
-	width:600px;
-	position:relative;
+  width: 600px;
+  position: relative;
 }
 
-.score-wrapper{
-	width:600px;
-	display:flex;
+.score-wrapper {
+  width: 600px;
+  display: flex;
 }
 
 .high-score {
-	font-size: 14px;
-	color: #5D5D5D;
-	align-self: flex-end;
+  font-size: 14px;
+  color: #5d5d5d;
+  align-self: flex-end;
 }
 
 .current-score {
-	font-weight: 600;
-	font-size: 14px;
-	color: #5D5D5D;
-	margin-left: 10px;
-	align-self: flex-end;
+  font-weight: 600;
+  font-size: 14px;
+  color: #5d5d5d;
+  margin-left: 10px;
+  align-self: flex-end;
 }
 
 .restart {
-	position: absolute;
-	top:70px;
-	z-index: 100;
+  position: absolute;
+  top: 70px;
+  z-index: 100;
+}
+
+.draw-btn {
+  cursor: pointer;
+  width: 170px;
+  height: 45px;
+  background-color: white;
+  color: #5d5d5d;
+  border: 1px solid #5d5d5d;
+  border-radius: 10px;
+  margin-top: 70px;
+  position: relative;
+  margin-right: 430px;
 }

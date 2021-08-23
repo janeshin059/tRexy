@@ -5,7 +5,6 @@ function DrawingPage() {
 		<div className="drawing-page">
 		<Editor></Editor>
 		</div>
-
 	)
 
 }
