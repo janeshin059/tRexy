@@ -58,13 +58,14 @@
 
 .draw-btn {
   cursor: pointer;
-  width: 170px;
-  height: 45px;
   background-color: white;
-  color: #5d5d5d;
-  border: 1px solid #5d5d5d;
-  border-radius: 10px;
+  border: none;
   margin-top: 70px;
   position: relative;
-  margin-right: 430px;
+  margin-right: 550px;
+}
+
+.palette {
+  width: 45px;
+  height: 45px;
 }

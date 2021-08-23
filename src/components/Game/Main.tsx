@@ -5,6 +5,7 @@ import Obstacle from "./Obstacle/Obstacle";
 import "./Main.css";
 import Restart from "../../assets/restart.png";
 import { useHistory } from "react-router-dom";
+import Palette from '../../assets/pixel_palette.png';
 
 function Main() {
   const [isStart, setIsStart] = useState(false);
@@ -118,7 +119,10 @@ function Main() {
 
         <Obstacle showObstacle={showObstacle}></Obstacle>
       </div>
-     {!isStart && (<button onClick={handleDrawingClick} className="draw-btn">DRAW YOUR OWN</button>
+     {!isStart && (<button onClick={handleDrawingClick} className="draw-btn" >
+       <img className="palette" src={Palette}></img>
+       
+     </button>
     )} 
     </div>
   );
