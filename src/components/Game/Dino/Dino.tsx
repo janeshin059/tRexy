@@ -32,7 +32,7 @@ function Dino(props: {isDefault:boolean}) {
   const item = localStorage.getItem('recent-image') ? localStorage.getItem('recent-image')?.toString(): DinoImg
   return (
     <>
-    {props.isDefault ? <img id="dino" src={DinoImg}></img> : <img id="dino" src={item}></img>}
+    {props.isDefault ? <img id="dino" src={DinoImg} alt="dino"></img> : <img id="dino" src={item} alt="drawing"></img>}
     </>
   );
 }

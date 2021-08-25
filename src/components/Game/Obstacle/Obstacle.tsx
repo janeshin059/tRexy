@@ -5,8 +5,8 @@ import "./Obstacle.css";
 function Obstacle() {
   return (
     <>
-      <img id="obstacle" src={ObstacleImg} />
-      <img id="obstacle2" src={Obstacle2Img} />
+      <img id="obstacle" src={ObstacleImg} alt="obstacle"/>
+      <img id="obstacle2" src={Obstacle2Img} alt="obstacle2"/>
     </>
   );
 }

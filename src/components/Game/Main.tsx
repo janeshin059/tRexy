@@ -110,7 +110,7 @@ function Main(props: { isDefault: boolean }) {
       </div>
       <div className="game">
         {isGameOver && (
-          <img className="restart" src={Restart} onClick={handleReStart}></img>
+          <img className="restart" src={Restart} onClick={handleReStart} alt="restart"></img>
         )}
         <Background isStart={isStart}></Background>
         <Dino isDefault={props.isDefault}></Dino>
@@ -120,13 +120,13 @@ function Main(props: { isDefault: boolean }) {
       <div className="gamemode-wrapper">
         {!isStart && (
           <button onClick={handleDrawingClick} className="draw-btn">
-            <img className="palette" src={PaletteImg}></img>
+            <img className="palette" src={PaletteImg} alt="palettemode"></img>
           </button>
         )}
 
         {(!isStart && !props.isDefault) && (
           <button onClick={handleDefaultModeClick} className="dino-btn">
-            <img src={DinoImg}></img>
+            <img src={DinoImg} alt="dinomode"></img>
           </button>
         )}
       </div>
