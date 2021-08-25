@@ -9,12 +9,6 @@ function Background(props: { isStart: boolean }) {
   const [offset, setOffset] = useState(0);
 
   useEffect(() => {
-    return () => {
-      clearInterval(interval.current as NodeJS.Timeout);
-    };
-  }, []);
-
-  useEffect(() => {
     draw();
     if (props.isStart) {
       moveBackGround();
