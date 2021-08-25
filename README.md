@@ -1,9 +1,9 @@
 # T-rexy
 
-![Game](/src/assets/dino_game_readme.png)
-
 A Chrome t-rex game in React.
 Draw your own characters with pixel art!
+
+![Game](/src/assets/dino_game_readme.png)
 
 Play this game in: https://t-rexy.herokuapp.com/
 
