@@ -6,7 +6,7 @@ import "./Main.css";
 import Restart from "../../assets/restart.png";
 import { useHistory } from "react-router-dom";
 import PaletteImg from "../../assets/pixel_palette.png";
-import DinoImg from "../../assets/dinosaur.png";
+import DinoImg from "../../assets/dino_mode.png";
 
 function Main(props: { isDefault: boolean }) {
   const [isStart, setIsStart] = useState(false);
@@ -33,6 +33,7 @@ function Main(props: { isDefault: boolean }) {
   };
   /*Start game when press Space bar */
   useEffect(() => {
+    console.log(props.isDefault)
     document.addEventListener("keydown", handleStart);
     return () => {
       document.removeEventListener("keydown", handleStart);
@@ -126,7 +127,7 @@ function Main(props: { isDefault: boolean }) {
 
         {(!isStart && !props.isDefault) && (
           <button onClick={handleDefaultModeClick} className="dino-btn">
-            <img src={DinoImg} alt="dinomode"></img>
+            <img className="trex" src={DinoImg} alt="dinomode"></img>
           </button>
         )}
       </div>
