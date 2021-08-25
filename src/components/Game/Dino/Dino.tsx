@@ -1,8 +1,8 @@
-import { useEffect, useLayoutEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import DinoImg from "../../../assets/dinosaur.png";
 import "./Dino.css";
 
-function Dino() {
+function Dino(props: {isDefault:boolean}) {
   const [isJumpMode, setisJumpMode] = useState(false);
   
   useEffect(() => {
@@ -19,7 +19,6 @@ function Dino() {
     }
     if ((e.keyCode === 38 && !isJumpMode) || (e.keyCode === 32 && !isJumpMode)) {
       setisJumpMode(true);
-      console.log("jump");
       dino.classList.add("jump");
     }
 
@@ -32,12 +31,9 @@ function Dino() {
 
   const item = localStorage.getItem('recent-image') ? localStorage.getItem('recent-image')?.toString(): DinoImg
   return (
-
-    <img id="dino" src={item}></img>
-    // <img
-    //   id="dino"
-    //   src={DinoImg}
-    // />
+    <>
+    {props.isDefault ? <img id="dino" src={DinoImg}></img> : <img id="dino" src={item}></img>}
+    </>
   );
 }
 

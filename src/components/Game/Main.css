@@ -54,6 +54,8 @@
   position: absolute;
   top: 70px;
   z-index: 100;
+  cursor: pointer;
+  left: 300px;
 }
 
 .draw-btn {
@@ -62,7 +64,20 @@
   border: none;
   margin-top: 70px;
   position: relative;
-  margin-right: 550px;
+}
+
+.dino-btn {
+  cursor: pointer;
+  background-color: white;
+  border: none;
+  margin-top: 70px;
+  position: relative;
+}
+
+.gamemode-wrapper {
+  display: flex;
+  flex-direction: row;
+  margin-right: 500px;
 }
 
 .palette {

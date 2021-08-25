@@ -1,60 +1,57 @@
 #obstacle {
-	position:absolute;
-	top: 115px;
-	/* left: 0px; */
-	/* transform: scale(0.05); */
+  position: absolute;
+  top: 115px;
+  left: 300px;
 }
 
 #obstacle2 {
-	position:absolute;
-	top: 110px;
-	left: 500px;
-	/* transform: scale(0.05); */
+  position: absolute;
+  top: 110px;
+  left: 500px;
+  width: 50px;
+  height: 30px;
 }
 
-
 .move {
-	animation: moveObstacle 4s linear infinite;
-} 
+  animation: moveObstacle 4s linear infinite;
+}
 
-@keyframes moveObstacle { 
+@keyframes moveObstacle {
   0% {
     left: 400px;
   }
-	50% {
-   left: 200px;
+  50% {
+    left: 200px;
   }
-	75% {
-		left : 100px;
-	}
+  75% {
+    left: 100px;
+  }
   100% {
     left: -50px;
   }
-}  
-
-
+}
 
 .move-2 {
-	animation: moveObstacle2 4s linear infinite;
-} 
+  animation: moveObstacle2 4s linear infinite;
+}
 
-@keyframes moveObstacle2 { 
+@keyframes moveObstacle2 {
   0% {
     left: 600px;
   }
-	25% {
+  25% {
     left: 500px;
   }
-	50% {
-   left: 400px;
+  50% {
+    left: 400px;
   }
-	70% {
-		left : 300px;
-	}
-	90% {
-		left : 150px;
-	}
+  70% {
+    left: 300px;
+  }
+  90% {
+    left: 100px;
+  }
   100% {
     left: -10px;
   }
-}  
+}

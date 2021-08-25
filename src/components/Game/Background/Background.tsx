@@ -2,9 +2,9 @@ import { useEffect, useRef, useState } from "react";
 import HorizonImg from "../../../assets/background.jpg";
 
 const UPDATE = 150;
-const SPEED = 10;
+const SPEED = 15;
 
-function Background(props: {isStart:boolean}) {
+function Background(props: { isStart: boolean }) {
   const interval: { current: NodeJS.Timeout | null } = useRef(null);
   const [offset, setOffset] = useState(0);
 
@@ -15,10 +15,9 @@ function Background(props: {isStart:boolean}) {
   }, []);
 
   useEffect(() => {
-    
     draw();
-    if(props.isStart){
-    moveBackGround();
+    if (props.isStart) {
+      moveBackGround();
     }
     return () => {
       clearInterval(interval.current as NodeJS.Timeout);
@@ -35,8 +34,8 @@ function Background(props: {isStart:boolean}) {
 
     img.src = HorizonImg;
 
-		if(!ctx) return;
-	
+    if (!ctx) return;
+
     img.onload = function () {
       ctx?.drawImage(
         img,
@@ -76,11 +75,7 @@ function Background(props: {isStart:boolean}) {
     }, UPDATE);
   };
 
-  return (
-    <div>
-      <canvas width="600px" height="150px" id="background"></canvas>
-    </div>
-  );
+  return <canvas width="600px" height="150px" id="background"></canvas>;
 }
 
 export default Background;

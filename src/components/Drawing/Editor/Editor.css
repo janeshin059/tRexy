@@ -7,36 +7,6 @@
   align-items: center;
 }
 
-#options {
-  display: flex;
-  margin-bottom: 3rem;
-  justify-content: center;
-}
-
-.option {
-  display: flex;
-  flex-direction: column;
-}
-
-.panelInput {
-  height: 5rem;
-  width: 5rem;
-  font-size: 2rem;
-  text-align: center;
-  background-color: black;
-  color: white;
-  border: 1px solid grey;
-  border-radius: 0.25rem;
-  margin: 0 1rem 0.5rem 1rem;
-  padding-left: 1rem;
-}
-
-.panelInput:focus {
-  outline: none !important;
-  border-color: black;
-  box-shadow: 0 0 0.5rem grey;
-}
-
 .clear-btn {
   border-radius: 0.25rem;
   border: 1px solid #5d5d5d;
@@ -58,10 +28,6 @@
   width: 80px;
   height: 45px;
   border-radius: 10px;
-}
-
-.circle-picker {
-  margin-bottom: 1.5rem !important;
 }
 
 .buttons-wrapper {
