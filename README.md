@@ -1,6 +1,6 @@
 # T-rexy
 
-![Alt text](/relative/path/to/img.jpg?raw=true "Optional Title")
+![Game](/src/assets/dino_game_readme.png)
 
 A Chrome t-rex game in React.
 Draw your own characters with pixel art!
