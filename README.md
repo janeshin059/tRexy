@@ -1,9 +1,9 @@
 # T-rexy
 
-![Alt text](/relative/path/to/img.jpg?raw=true "Optional Title")
-
 A Chrome t-rex game in React.
 Draw your own characters with pixel art!
+
+![Game](/src/assets/dino_game_readme.png)
 
 Play this game in: https://t-rexy.herokuapp.com/
 
